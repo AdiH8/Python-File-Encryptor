@@ -28,6 +28,8 @@ def Decrypt(filename, key):
     file = open(filename, "wb")
     file.write(data)
     file.close()
+
+    print("File decrypted successfully !")
     
 
 choice = ""
@@ -41,7 +43,7 @@ while choice != "3":
         filename = input("Enter filename with extension:\n")
     if choice == "1":
         key = Encrypt(filename)
-        print("Encryption key:", key.hex())
+        print("Encryption key: ", key.hex())
     if choice == "2":
         key_hex = input("Enter the decryption key (in hex):\n")
         key = bytes.fromhex(key_hex)
